@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 // The component now correctly uses the PageProps interface
-export default function AccomplishmentPage({ params }: PageProps) {
+export default async function AccomplishmentPage({ params }: PageProps) {
   const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
 
   if (!accomplishment) {
@@ -60,4 +60,3 @@ export default function AccomplishmentPage({ params }: PageProps) {
     </div>
   )
 }
-
