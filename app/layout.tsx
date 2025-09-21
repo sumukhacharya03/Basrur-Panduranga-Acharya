@@ -4,7 +4,6 @@ import './globals.css'
 import { Header } from './header'
 import { ThemeProvider } from 'next-themes'
 import { Menu } from '@/components/ui/Menu'
-import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -52,15 +51,12 @@ export default function RootLayout({
           defaultTheme="system"
         >
           <div className="flex min-h-screen w-full font-[family-name:var(--font-inter-tight)]">
-            <aside className="fixed top-0 left-0 h-full w-64 overflow-y-auto border-r border-zinc-200 p-4 pt-8 dark:border-zinc-800">
+            <aside className="fixed top-0 left-0 hidden h-full w-64 overflow-y-auto border-r border-zinc-200 p-4 pt-8 md:block dark:border-zinc-800">
               <Menu />
             </aside>
-            <main className="ml-64 flex-1 p-8">
-              <div className="mb-12 flex items-start justify-between">
+            <main className="flex-1 p-4 pt-8 md:ml-64 md:p-8">
+              <div className="mb-12">
                 <Header />
-                <div className="flex-shrink-0">
-                  <ThemeSwitcher />
-                </div>
               </div>
               <div>{children}</div>
             </main>
