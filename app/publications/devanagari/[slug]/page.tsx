@@ -2,13 +2,17 @@ import { PROJECTS_DEVANAGARI } from '@/app/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
+interface PageProps {
+  params: { slug: string };
+}
+
 export async function generateStaticParams() {
   return PROJECTS_DEVANAGARI.map((project) => ({
     slug: project.slug,
   }))
 }
 
-export default function DevanagariPublicationPage({ params }: { params: { slug: string } }) {
+export default function DevanagariPublicationPage({ params }: PageProps) {
   const project = PROJECTS_DEVANAGARI.find((p) => p.slug === params.slug)
 
   if (!project) {

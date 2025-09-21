@@ -2,13 +2,17 @@ import { PROJECTS_KANNADA } from '@/app/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
+interface PageProps {
+  params: { slug: string };
+}
+
 export async function generateStaticParams() {
   return PROJECTS_KANNADA.map((project) => ({
     slug: project.slug,
   }))
 }
 
-export default function KannadaPublicationPage({ params }: { params: { slug: string } }) {
+export default function KannadaPublicationPage({ params }: PageProps) {
   const project = PROJECTS_KANNADA.find((p) => p.slug === params.slug)
 
   if (!project) {
@@ -17,7 +21,12 @@ export default function KannadaPublicationPage({ params }: { params: { slug: str
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{project.name}</h1>
+      <div className="flex items-baseline gap-x-3">
+        <h1 className="text-2xl font-bold">{project.name}</h1>
+        {project.subtitle && (
+          <h2 className="text-xl text-zinc-500 dark:text-zinc-400">{project.subtitle}</h2>
+        )}
+      </div>
       <p className="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">{project.description}</p>
       
       {project.image && (

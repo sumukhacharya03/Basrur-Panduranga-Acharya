@@ -2,24 +2,21 @@ import { ACCOMPLISHMENTS } from '@/app/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
+interface PageProps {
+  params: { slug: string };
+}
+
 export async function generateStaticParams() {
   return ACCOMPLISHMENTS.map((accomplishment) => ({
     slug: accomplishment.slug,
   }))
 }
 
-export default function AccomplishmentPage({ params }: { params: { slug: string } }) {
+export default function AccomplishmentPage({ params }: PageProps) {
   const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
 
   if (!accomplishment) {
     notFound()
-  }
-
-  // Helper to check if a description item should be a list item
-  const isListItem = (text: string) => {
-    // Items that don't start with a capital letter or are part of a list
-    // can be considered list items. Adjust logic as needed.
-    return !/^[A-Z]/.test(text) || accomplishment.description.length > 1;
   }
 
   const introParagraph = accomplishment.description[0];
