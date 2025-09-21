@@ -1,6 +1,5 @@
 'use client'
 import { AnimatedBackground } from '@/components/ui/animated-background'
-import { TextLoop } from '@/components/ui/text-loop'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
@@ -23,7 +22,7 @@ const THEMES_OPTIONS = [
   },
 ]
 
-function ThemeSwitch() {
+export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -63,23 +62,5 @@ function ThemeSwitch() {
         )
       })}
     </AnimatedBackground>
-  )
-}
-
-export function Footer() {
-  return (
-    <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
-      <div className="flex items-center justify-between">
-        <a href="#" target="_blank">
-          <TextLoop className="text-xs text-zinc-500">
-            <span>© 2025 Basrur Panduranga Acharya.</span>
-            <span>Built with Nim.</span>
-          </TextLoop>
-        </a>
-        <div className="text-xs text-zinc-400">
-          <ThemeSwitch />
-        </div>
-      </div>
-    </footer>
   )
 }

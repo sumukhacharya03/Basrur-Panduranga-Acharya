@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-8 flex items-center justify-between">
+    <header>
       <div>
         <Link href="/" className="text-2xl font-bold text-black dark:text-white">
           Basrur Panduranga Acharya
@@ -22,3 +22,4 @@ export function Header() {
     </header>
   )
 }
+

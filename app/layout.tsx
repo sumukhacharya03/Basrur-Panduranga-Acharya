@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
-import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import { Menu } from '@/components/ui/Menu'
+import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -49,15 +50,25 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="system"
         >
-          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
-            <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
-              <Header />
-              {children}
-              <Footer />
-            </div>
+          <div className="flex min-h-screen w-full font-[family-name:var(--font-inter-tight)]">
+            <aside className="fixed top-0 left-0 h-full w-64 border-r border-zinc-200 dark:border-zinc-800 p-4 pt-8 overflow-y-auto">
+                <Menu />
+            </aside>
+            <main className="flex-1 ml-64 p-8">
+                <div className="flex justify-between items-start mb-12">
+                    <Header />
+                    <div className="flex-shrink-0">
+                      <ThemeSwitcher />
+                    </div>
+                </div>
+                <div>
+                    {children}
+                </div>
+            </main>
           </div>
         </ThemeProvider>
       </body>
     </html>
   )
 }
+
