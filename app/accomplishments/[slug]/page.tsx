@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 // This defines the expected props for this page
 interface PageProps {
-  params: { slug: string };
+  params: { slug: string }
 }
 
 export async function generateStaticParams() {
@@ -21,42 +21,40 @@ export default async function AccomplishmentPage({ params }: PageProps) {
     notFound()
   }
 
-  const introParagraph = accomplishment.description[0];
-  const listItems = accomplishment.description.slice(1);
-
+  const introParagraph = accomplishment.description[0]
+  const listItems = accomplishment.description.slice(1)
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">{accomplishment.title}</h1>
+      <h1 className="mb-4 text-2xl font-bold">{accomplishment.title}</h1>
 
-      <div className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          <p>{introParagraph}</p>
+      <div className="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+        <p>{introParagraph}</p>
 
-          {listItems.length > 0 && (
-             <ul className="list-disc list-inside space-y-2 mt-4">
-                {listItems.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-          )}
+        {listItems.length > 0 && (
+          <ul className="mt-4 list-inside list-disc space-y-2">
+            {listItems.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Image Gallery Section */}
       {accomplishment.images && (
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {accomplishment.images.map((src, index) => (
-                <Image
-                    key={index}
-                    src={src}
-                    alt={`${accomplishment.title} - image ${index + 1}`}
-                    width={200}
-                    height={200}
-                    className="rounded-lg object-cover w-full h-auto shadow-md"
-                />
-            ))}
+        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {accomplishment.images.map((src, index) => (
+            <Image
+              key={index}
+              src={src}
+              alt={`${accomplishment.title} - image ${index + 1}`}
+              width={200}
+              height={200}
+              className="h-auto w-full rounded-lg object-cover shadow-md"
+            />
+          ))}
         </div>
       )}
-
     </div>
   )
 }

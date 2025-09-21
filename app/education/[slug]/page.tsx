@@ -2,7 +2,7 @@ import { EDUCATION } from '@/app/data'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
-  params: { slug: string };
+  params: { slug: string }
 }
 
 export async function generateStaticParams() {
@@ -20,23 +20,22 @@ export default function EducationPage({ params }: PageProps) {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">{education.title}</h1>
-      
+      <h1 className="mb-4 text-2xl font-bold">{education.title}</h1>
+
       {Array.isArray(education.description) ? (
-        <div className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <div className="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
           <p>{education.description[0]}</p>
           <p>{education.description[1]}</p>
-          <ul className="list-disc list-inside space-y-2 !mt-4">
+          <ul className="!mt-4 list-inside list-disc space-y-2">
             <li>{education.description[2]}</li>
             <li>{education.description[3]}</li>
           </ul>
         </div>
       ) : (
-        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
           {education.description}
         </p>
       )}
     </div>
   )
 }
-

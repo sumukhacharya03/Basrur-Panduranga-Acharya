@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
 interface PageProps {
-  params: { slug: string };
+  params: { slug: string }
 }
 
 export async function generateStaticParams() {
@@ -24,23 +24,26 @@ export default function KannadaPublicationPage({ params }: PageProps) {
       <div className="flex items-baseline gap-x-3">
         <h1 className="text-2xl font-bold">{project.name}</h1>
         {project.subtitle && (
-          <h2 className="text-xl text-zinc-500 dark:text-zinc-400">{project.subtitle}</h2>
+          <h2 className="text-xl text-zinc-500 dark:text-zinc-400">
+            {project.subtitle}
+          </h2>
         )}
       </div>
-      <p className="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">{project.description}</p>
-      
+      <p className="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+        {project.description}
+      </p>
+
       {project.image && (
         <div className="mt-8 flex justify-center">
-            <Image
-              src={project.image}
-              alt={`Cover of ${project.name}`}
-              width={300}
-              height={450}
-              className="rounded-lg object-contain shadow-md"
-            />
+          <Image
+            src={project.image}
+            alt={`Cover of ${project.name}`}
+            width={300}
+            height={450}
+            className="rounded-lg object-contain shadow-md"
+          />
         </div>
       )}
     </div>
   )
 }
-

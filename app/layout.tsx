@@ -15,14 +15,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://nim-fawn.vercel.app/'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
     default: 'Basrur Panduranga Acharya - Author & Columnist',
-    template: '%s | Basrur Panduranga Acharya'
+    template: '%s | Basrur Panduranga Acharya',
   },
-  description:  'The personal website of Basrur Panduranga Acharya, an Author & Columnist.',
-};
+  description:
+    'The personal website of Basrur Panduranga Acharya, an Author & Columnist.',
+}
 
 const geist = Geist({
   variable: '--font-geist',
@@ -51,19 +52,17 @@ export default function RootLayout({
           defaultTheme="system"
         >
           <div className="flex min-h-screen w-full font-[family-name:var(--font-inter-tight)]">
-            <aside className="fixed top-0 left-0 h-full w-64 border-r border-zinc-200 dark:border-zinc-800 p-4 pt-8 overflow-y-auto">
-                <Menu />
+            <aside className="fixed top-0 left-0 h-full w-64 overflow-y-auto border-r border-zinc-200 p-4 pt-8 dark:border-zinc-800">
+              <Menu />
             </aside>
-            <main className="flex-1 ml-64 p-8">
-                <div className="flex justify-between items-start mb-12">
-                    <Header />
-                    <div className="flex-shrink-0">
-                      <ThemeSwitcher />
-                    </div>
+            <main className="ml-64 flex-1 p-8">
+              <div className="mb-12 flex items-start justify-between">
+                <Header />
+                <div className="flex-shrink-0">
+                  <ThemeSwitcher />
                 </div>
-                <div>
-                    {children}
-                </div>
+              </div>
+              <div>{children}</div>
             </main>
           </div>
         </ThemeProvider>
@@ -71,4 +70,3 @@ export default function RootLayout({
     </html>
   )
 }
-

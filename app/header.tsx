@@ -6,7 +6,10 @@ export function Header() {
   return (
     <header>
       <div>
-        <Link href="/" className="text-2xl font-bold text-black dark:text-white">
+        <Link
+          href="/"
+          className="text-2xl font-bold text-black dark:text-white"
+        >
           Basrur Panduranga Acharya
         </Link>
         <TextEffect
@@ -22,4 +25,3 @@ export function Header() {
     </header>
   )
 }
-
