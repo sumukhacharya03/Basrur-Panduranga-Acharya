@@ -46,10 +46,13 @@ export function AnimatedBackground({
     }
   }, [defaultValue])
 
-  return Children.map(children, (child: React.ReactElement, index) => {
-    // Type assertion to safely access props
-    const childProps = child.props as { 'data-id': string; className?: string; children?: React.ReactNode }
-    const id = childProps['data-id']
+  return Children.map(children, (child, index) => {
+    // Safe access to props
+    const childElement = child as ReactElement<{
+      'data-id': string
+      [key: string]: unknown
+    }>
+    const id = childElement.props['data-id']
 
     const interactionProps = enableHover
       ? {
@@ -61,10 +64,13 @@ export function AnimatedBackground({
         }
 
     return cloneElement(
-      child,
+      childElement,
       {
         key: index,
-        className: cn('relative inline-flex', childProps.className),
+        className: cn(
+          'relative inline-flex',
+          childElement.props.className as string,
+        ),
         'data-checked': activeId === id ? 'true' : 'false',
         ...interactionProps,
       },
@@ -85,7 +91,9 @@ export function AnimatedBackground({
             />
           )}
         </AnimatePresence>
-        <div className="z-10">{childProps.children}</div>
+        <div className="z-10">
+          {childElement.props.children as React.ReactNode}
+        </div>
       </>,
     )
   })
