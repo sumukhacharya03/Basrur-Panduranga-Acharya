@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 // This defines the expected props for this page
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -13,9 +13,10 @@ export async function generateStaticParams() {
   }))
 }
 
-// The 'async' keyword has been removed and the PageProps interface is used directly.
-export default function AccomplishmentPage({ params }: PageProps) {
-  const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
+// The component is now async to handle the Promise params
+export default async function AccomplishmentPage({ params }: PageProps) {
+  const { slug } = await params
+  const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === slug)
 
   if (!accomplishment) {
     notFound()
