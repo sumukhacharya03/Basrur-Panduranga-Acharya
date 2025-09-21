@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -12,8 +12,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function DevanagariPublicationPage({ params }: PageProps) {
-  const project = PROJECTS_DEVANAGARI.find((p) => p.slug === params.slug)
+export default async function DevanagariPublicationPage({ params }: PageProps) {
+  const { slug } = await params
+  const project = PROJECTS_DEVANAGARI.find((p) => p.slug === slug)
 
   if (!project) {
     notFound()

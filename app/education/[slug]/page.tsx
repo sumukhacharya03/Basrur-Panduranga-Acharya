@@ -2,7 +2,7 @@ import { EDUCATION } from '@/app/data'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function EducationPage({ params }: PageProps) {
-  const education = EDUCATION.find((e) => e.slug === params.slug)
+export default async function EducationPage({ params }: PageProps) {
+  const { slug } = await params
+  const education = EDUCATION.find((e) => e.slug === slug)
 
   if (!education) {
     notFound()
