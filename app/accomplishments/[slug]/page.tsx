@@ -1,12 +1,7 @@
 import { ACCOMPLISHMENTS } from '@/app/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-
-// This defines the expected props for this page
-// interface PageProps {
-//   params: { slug: string }
-// }
-// We are removing the PageProps interface to define the type inline.
+import { PageProps } from './page' // Import the auto-generated PageProps
 
 export async function generateStaticParams() {
   return ACCOMPLISHMENTS.map((accomplishment) => ({
@@ -14,12 +9,7 @@ export async function generateStaticParams() {
   }))
 }
 
-// The component now has its props type defined inline
-export default async function AccomplishmentPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export default async function AccomplishmentPage({ params }: PageProps) {
   const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
 
   if (!accomplishment) {
