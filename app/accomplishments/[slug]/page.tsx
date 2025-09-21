@@ -1,7 +1,10 @@
 import { ACCOMPLISHMENTS } from '@/app/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import { PageProps } from './page' // Import the auto-generated PageProps
+
+interface PageProps {
+  params: { slug: string }
+}
 
 export async function generateStaticParams() {
   return ACCOMPLISHMENTS.map((accomplishment) => ({
@@ -9,7 +12,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function AccomplishmentPage({ params }: PageProps) {
+// The 'async' keyword has been removed from this line
+export default function AccomplishmentPage({ params }: PageProps) {
   const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
 
   if (!accomplishment) {
