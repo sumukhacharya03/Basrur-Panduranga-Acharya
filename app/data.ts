@@ -6,6 +6,7 @@ type Project = {
   id: string
   slug: string
   subtitle?: string
+  image?: string // Added optional image property
 }
 
 type Education = {
@@ -20,6 +21,7 @@ type Accomplishment = {
   description: string[]
   id: string
   slug: string
+  images?: string[]
 }
 
 type MenuLink = {
@@ -37,6 +39,7 @@ export const PROJECTS_KANNADA: Project[] = [
     video: '',
     id: 'kannada1',
     slug: 'pujaneeya-vraksha-sampattu',
+    image: '/kannada1.jpg',
   },
   {
     name: 'Habba Haridinagalu and Sanskrathi Sugandha (ಹಬ್ಬ ಹರಿದಿನಗಳು ಮತ್ತು ಸಂಸ್ಕೃತಿ ಸುಗಂಧ)',
@@ -45,6 +48,7 @@ export const PROJECTS_KANNADA: Project[] = [
     video: '',
     id: 'kannada2',
     slug: 'habba-haridinagalu',
+    image: '/kannada2.jpg',
   },
   {
     name: 'Shraddha Darpana',
@@ -53,6 +57,7 @@ export const PROJECTS_KANNADA: Project[] = [
     video: '',
     id: 'kannada3',
     slug: 'shraddha-darpana',
+    image: '/kannada3.jpg',
   },
 ]
 
@@ -65,6 +70,7 @@ export const PROJECTS_DEVANAGARI: Project[] = [
     video: '',
     id: 'devanagari1',
     slug: 'samanthraka-anwadhana-prayoga',
+    image: '/devanagari1.jpg',
   },
   {
     name: 'Vishnu Yaga Pradeepika',
@@ -74,6 +80,7 @@ export const PROJECTS_DEVANAGARI: Project[] = [
     video: '',
     id: 'devanagari2',
     slug: 'vishnu-yaga-pradeepika',
+    image: '/devanagari2.jpg',
   },
   {
     name: 'Astaavadhana Manjaree',
@@ -82,6 +89,7 @@ export const PROJECTS_DEVANAGARI: Project[] = [
     video: '',
     id: 'devanagari3',
     slug: 'astaavadhana-manjaree',
+    image: '/devanagari3.jpg',
   },
   {
     name: 'Apara Prayoga Deepika',
@@ -91,6 +99,7 @@ export const PROJECTS_DEVANAGARI: Project[] = [
     video: '',
     id: 'devanagari4',
     slug: 'apara-prayoga-deepika',
+    image: '/devanagari4.jpg',
   },
 ]
 
@@ -104,10 +113,10 @@ export const EDUCATION: Education[] = [
   {
     title: 'Formal Education',
     description: [
-        "Basrur Panduranga Acharya studied his schooling at Hindu School Basrur and Board High School Basrur. Interestingly, he was the FIRST student of Board High School Basrur and subsequently he became a teacher in the same High School and served for many years.",
-        "Secondary Teacher’s Training at Government Training School in Udupi and B.Ed training at Manipal College of Education, deputed by the Government in the service.",
-        "Mysore Kannada Pandit (Final) Exam by Karnataka Government",
-        "Hindi Ratna by Mysore Hindi Parishat"
+        'Basrur Panduranga Acharya studied his schooling at Hindu School Basrur and Board High School Basrur. Interestingly, he was the FIRST student of Board High School Basrur and subsequently he became a teacher in the same High School and served for many years.',
+        'Secondary Teacher’s Training at Government Training School in Udupi and B.Ed training at Manipal College of Education, deputed by the Government in the service.',
+        'Mysore Kannada Pandit (Final) Exam by Karnataka Government',
+        'Hindi Ratna by Mysore Hindi Parishat'
     ],
     id: 'edu2',
     slug: 'formal-education',
@@ -119,7 +128,7 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
     title: 'Career as a Teacher',
     description: [
       "Basrur Panduranga Acharya served in the ‘Teaching Field’ for a period around 37 years:",
-      'Govt. Primary School Mundrupady, Belthangadi Tq– 1 Year',
+      'Govt. Primary School Mundrupady, Belthangadi Tq - 1 Year',
       'Govt. Primary School Karkunje, Kundapura Tq – 2 Years',
       'Head Master of Sarvodaya Higher Primary School, Gulwadi, Kundapura Tq - 2 Years',
       'Tq Board Malnadu High School, Vande, Kundapura Tq – 5 Years',
@@ -139,7 +148,7 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
       "One of the two Chief Priests at ‘Punar Pratishta’ at Sri Gokarna Mutt, Basrur, under the holy guidance of his holiness of Srimad Dwarakanath Thirtha Swamiji.",
       "One of the two Chief Priests at ‘Punar Prastishta’ at Sri Mahalasa Temple, Basrur, under the HH Srimad Sudheendra Thirtha Swamiji.",
       "One of the two Chief Priests at “Sri Mukhya Prana Temple Pratishta’ of Prabhu’s Family in Bhatkal under the holy guidance of his holiness Srimad Sudheendra Thirtha Swamiji.",
-      "And in many ‘Yaga, Pratista’ etc programmes in Basrur, Kundapura, Kota, Koteswara, Brahmawara, Udupi, Siddapura, Gangolli, Bhatkal, Udupi, Mangalore etc"
+      "And in many ‘Yaga, Pratista’ etc programmes in Basrur, Kundapura, Kota, Koteswara, Brahmawara, Udupi, Siddapura, Gangolli, Bhatkal, Udupi, Mangalore etc",
     ],
     id: 'acc2',
     slug: 'vaidika-service',
@@ -147,13 +156,13 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
   {
     title: 'Other Activities',
     description: [
-        'Basrur Panduranga Acharya served and played his role in many forms. Some of them are:',
-        'As a part-time teacher in Sanskrit at Shri Bhuvanendra Balakashram, Basrur for 32 years, from 1968-1999.',
-        'An external examiner at Srinivasa Nigamagama Paatashaala, Mangaluru for 12 years.',
-        'As the President of Akhila Karnataka Sanskrit Parishath Kundapura Branch for 5 years from 1978-1982',
-        'As the President of GSB Vaidik Mandali Basrur for 20 years',
-        'As the secretary, old Boys Association, Board High School Basrur for 2 years',
-        'Conducted free Sanskrith classes for beginners from 1977 to 1980 for 3 years in Basrur, Kundapura Tq.'
+      'Basrur Panduranga Acharya served and played his role in many forms. Some of them are:',
+      'As a part-time teacher in Sanskrit at Shri Bhuvanendra Balakashram, Basrur for 32 years, from 1968-1999.',
+      'An external examiner at Srinivasa Nigamagama Paatashaala, Mangaluru for 12 years.',
+      'As the President of Akhila Karnataka Sanskrit Parishath Kundapura Branch for 5 years from 1978-1982',
+      'As the President of GSB Vaidik Mandali Basrur for 20 years',
+      'As the secretary, old Boys Association, Board High School Basrur for 2 years',
+      'Conducted free Sanskrith classes for beginners from 1977 to 1980 for 3 years in Basrur, Kundapura Tq.'
     ],
     id: 'acc3',
     slug: 'other-activities',
@@ -173,6 +182,7 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
     ],
     id: 'acc4',
     slug: 'honors',
+    images: ['/honor1.jpg', '/honor2.jpg', '/honor3.jpg', '/honor4.jpg']
   },
 ]
 

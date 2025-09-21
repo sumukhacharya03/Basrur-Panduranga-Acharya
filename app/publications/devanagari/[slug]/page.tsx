@@ -1,5 +1,6 @@
 import { PROJECTS_DEVANAGARI } from '@/app/data'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 
 export async function generateStaticParams() {
   return PROJECTS_DEVANAGARI.map((project) => ({
@@ -16,13 +17,25 @@ export default function DevanagariPublicationPage({ params }: { params: { slug: 
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">{project.name}</h1>
+      <h1 className="text-2xl font-bold">{project.name}</h1>
       {project.subtitle && (
-        <p className="text-zinc-500 dark:text-zinc-400 -mt-2 mb-4">
+        <h2 className="text-lg text-zinc-500 dark:text-zinc-400 mt-1">
           {project.subtitle}
-        </p>
+        </h2>
       )}
-      <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{project.description}</p>
+      <p className="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">{project.description}</p>
+      
+      {project.image && (
+        <div className="mt-8 flex justify-center">
+            <Image
+              src={project.image}
+              alt={`Cover of ${project.name}`}
+              width={300}
+              height={450}
+              className="rounded-lg object-contain shadow-md"
+            />
+        </div>
+      )}
     </div>
   )
 }
