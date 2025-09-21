@@ -3,9 +3,10 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
 // This defines the expected props for this page
-interface PageProps {
-  params: { slug: string }
-}
+// interface PageProps {
+//   params: { slug: string }
+// }
+// We are removing the PageProps interface to define the type inline.
 
 export async function generateStaticParams() {
   return ACCOMPLISHMENTS.map((accomplishment) => ({
@@ -13,8 +14,12 @@ export async function generateStaticParams() {
   }))
 }
 
-// The component now correctly uses the PageProps interface
-export default async function AccomplishmentPage({ params }: PageProps) {
+// The component now has its props type defined inline
+export default async function AccomplishmentPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
 
   if (!accomplishment) {
@@ -28,11 +33,11 @@ export default async function AccomplishmentPage({ params }: PageProps) {
     <div>
       <h1 className="mb-4 text-2xl font-bold">{accomplishment.title}</h1>
 
-      <div className="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      <div className="leading-relaxed text-zinc-600 dark:text-zinc-400">
         <p>{introParagraph}</p>
 
         {listItems.length > 0 && (
-          <ul className="mt-4 list-inside list-disc space-y-2">
+          <ul className="!mt-4 list-inside list-disc space-y-2">
             {listItems.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
