@@ -2,6 +2,7 @@ import { ACCOMPLISHMENTS } from '@/app/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 
+// This defines the expected props for this page
 interface PageProps {
   params: { slug: string };
 }
@@ -12,6 +13,7 @@ export async function generateStaticParams() {
   }))
 }
 
+// The component now correctly uses the PageProps interface
 export default function AccomplishmentPage({ params }: PageProps) {
   const accomplishment = ACCOMPLISHMENTS.find((a) => a.slug === params.slug)
 
