@@ -35,9 +35,9 @@ export default function Personal() {
           >
             CLICK HERE FOR MENU OF CONTENTS
             {showMenu ? (
-              <ChevronUp className="h-5 w-5 border-2 border-current rounded-full" />
+              <ChevronUp className="h-5 w-5 rounded-full border-2 border-current" />
             ) : (
-              <ChevronDown className="h-5 w-5 border-2 border-current rounded-full" />
+              <ChevronDown className="h-5 w-5 rounded-full border-2 border-current" />
             )}
           </button>
 
