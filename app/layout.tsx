@@ -45,10 +45,10 @@ export default function RootLayout({
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
         <ThemeProvider
-          enableSystem={true}
+          enableSystem={false}
           attribute="class"
           storageKey="theme"
-          defaultTheme="system"
+          defaultTheme="light"
         >
           <div className="flex min-h-screen w-full font-[family-name:var(--font-inter-tight)]">
             <aside className="fixed top-0 left-0 hidden h-full w-64 overflow-y-auto border-r border-zinc-200 p-4 pt-8 md:block dark:border-zinc-800">
