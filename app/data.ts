@@ -114,7 +114,7 @@ export const EDUCATION: Education[] = [
   {
     title: 'Vaidik Education',
     description:
-      'Basrur Panduranga Acharya was born on 29th January 1940 in Basrur, Kundapura Tq, Udupi District. He had his vaidik studies under his father Basrur Vasudev Acharya and Higher vedik studies under his father’s younger brother Basur Ramdas Acharya.',
+      'Basrur Panduranga Acharya had his vaidik studies under his father Basrur Vasudev Acharya and Higher vedik studies under his father’s younger brother Basur Ramdas Acharya.',
     id: 'edu1',
     slug: 'vaidik-education',
   },
@@ -139,7 +139,7 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
       'Govt. Primary School Mundrupady, Belthangadi Tq - 1 Year',
       'Govt. Primary School Karkunje, Kundapura Tq – 2 Years',
       'Head Master of Sarvodaya Higher Primary School, Gulwadi, Kundapura Tq - 2 Years',
-      'Tq Board Malnadu High School, Vande, Kundapura Tq – 5 Years',
+      'Tq Board Malnadu High School, Vandse, Kundapura Tq – 5 Years',
       'Tq Board Higher Secondary School, Basrur, Kundapura Tq – 5 Years',
       'Govt Junior College Kundapura – 2 Years',
       'Govt High School, Basrur, Kundapura Tq – 15 Years',

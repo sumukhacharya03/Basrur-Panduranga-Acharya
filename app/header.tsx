@@ -2,17 +2,22 @@
 import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu as MenuIcon, X } from 'lucide-react'
+import { Menu as MenuIcon, X, Home } from 'lucide-react'
 import { Menu } from '@/components/ui/Menu'
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
+import { usePathname } from 'next/navigation'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  
+  // Check if we are on the home page
+  const isHomePage = pathname === '/'
 
   return (
     <>
       <header className="flex w-full items-start justify-between">
-        <div>
+        <div className="flex-1 pr-2">
           <Link
             href="/"
             className="text-2xl font-bold text-black dark:text-white"
@@ -29,22 +34,37 @@ export function Header() {
             Author & Columnist
           </TextEffect>
         </div>
-        <div className="flex items-center gap-4">
+        
+        {/* Adjusted gap for mobile to prevent overflow */}
+        <div className="flex flex-shrink-0 items-center gap-2 md:gap-4">
           {/* Laptop: Show ThemeSwitcher normally */}
-          <div className="hidden flex-shrink-0 md:block">
+          <div className="hidden md:block">
             <ThemeSwitcher />
           </div>
 
-          {/* Mobile: BIG, BOLD, BLUE Menu Button */}
+          {/* Home Button: Smaller padding/text on mobile */}
+          {!isHomePage && (
+            <Link
+              href="/"
+              title="Go to Home"
+              aria-label="Go to Home"
+              className="flex items-center gap-1.5 rounded-lg border-2 border-blue-600 px-3 py-2 text-sm font-bold text-blue-600 hover:bg-blue-50 md:gap-2 md:px-4 md:text-base dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-900/20"
+            >
+              <span>HOME</span>
+              <Home className="h-4 w-4 md:h-5 md:w-5" strokeWidth={3} />
+            </Link>
+          )}
+
+          {/* Mobile: BIG, BOLD, BLUE Menu Button - Compacted for mobile */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(true)}
               title="Open menu"
               aria-label="Open menu"
-              className="flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-base font-extrabold text-white shadow-md hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+              className="flex items-center gap-1.5 rounded-lg bg-blue-600 px-3 py-2 text-sm font-extrabold text-white shadow-md hover:bg-blue-700 md:px-5 md:py-2.5 md:text-base dark:bg-blue-500 dark:hover:bg-blue-600"
             >
               <span>MENU</span>
-              <MenuIcon className="h-6 w-6" strokeWidth={3} />
+              <MenuIcon className="h-5 w-5 md:h-6 md:w-6" strokeWidth={3} />
             </button>
           </div>
         </div>
