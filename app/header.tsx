@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation'
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  
+
   // Check if we are on the home page
   const isHomePage = pathname === '/'
 
@@ -34,7 +34,7 @@ export function Header() {
             Author & Columnist
           </TextEffect>
         </div>
-        
+
         {/* Adjusted gap for mobile to prevent overflow */}
         <div className="flex flex-shrink-0 items-center gap-2 md:gap-4">
           {/* Laptop: Show ThemeSwitcher normally */}
