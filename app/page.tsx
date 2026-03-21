@@ -14,7 +14,8 @@ export default function Personal() {
         {/* Text Content Container */}
         <div className="space-y-4">
           <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Basrur Panduranga Acharya is an Author & Columnist. A Kannada, Hindi and Sanskrit scholar and a teacher by profession.
+            Basrur Panduranga Acharya is an Author & Columnist. A Kannada, Hindi
+            and Sanskrit scholar and a teacher by profession.
           </p>
           <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
             He hails from Basrur Acharya family. Basrur being an ancient ritual
