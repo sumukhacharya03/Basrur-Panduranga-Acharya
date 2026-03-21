@@ -165,6 +165,9 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
     title: 'Other Activities',
     description: [
       'Basrur Panduranga Acharya served and played his role in many forms. Some of them are:',
+      'Has published substantial number of articles in Kannada news papers over the years.',
+      'Has published numerous articles in magazines such as Jeevotham, Panchakadayi, Sawaswathi Prabha etc',
+      'Has published large number articles in Souvenir Books covering educational institutions, temples and Mutts etc.',
       'As a part-time teacher in Sanskrit at Shri Bhuvanendra Balakashram, Basrur for 32 years, from 1968-1999.',
       'An external examiner at Srinivasa Nigamagama Paatashaala, Mangaluru for 12 years.',
       'As the President of Akhila Karnataka Sanskrit Parishath Kundapura Branch for 5 years from 1978-1982',
