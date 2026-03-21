@@ -114,14 +114,14 @@ export const EDUCATION: Education[] = [
   {
     title: 'Vaidik Education',
     description:
-      'Basrur Panduranga Acharya had his vaidik studies under his father Basrur Vasudev Acharya and Higher vedik studies under his father’s younger brother Basur Ramdas Acharya.',
+      'Basrur Panduranga Acharya had his vaidik studies under his father Basrur Vasudev Acharya and Higher vaidik studies under his father’s younger brother Basur Ramdas Acharya.',
     id: 'edu1',
     slug: 'vaidik-education',
   },
   {
     title: 'Formal Education',
     description: [
-      'Basrur Panduranga Acharya studied his schooling at Hindu School Basrur and Board High School Basrur. Interestingly, he was the FIRST student of Board High School Basrur and subsequently he became a teacher in the same High School and served for many years.',
+      'Basrur Panduranga Acharya studied his schooling at Hindu School Basrur and Board High School Basrur. Fortunately, he was the FIRST student of Board High School Basrur and subsequently he became a teacher in the same High School and served for many years.',
       'Secondary Teacher’s Training at Government Training School in Udupi and B.Ed training at Manipal College of Education, deputed by the Government in the service.',
       'Mysore Kannada Pandit (Final) Exam by Karnataka Government',
       'Hindi Ratna by Mysore Hindi Parishat',
@@ -149,7 +149,7 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
     slug: 'career-as-a-teacher',
   },
   {
-    title: 'Vaidika Service',
+    title: 'Vaidik Service',
     description: [
       'Basrur Panduranga Acharya Served over 30 Years as an ‘Archak’ at Sri Gokarna Partagali Jeevottam Mutt Basrur branch. In his leisure time, he also served as a purohit at Basrur and surrounding villages of Kundapura Tq over 58 years. Adding to the same, he also played his role in the following programs:',
       'Chief Priest/Chief Acharya for the Centenary Celebration of Sri Bhuavendra Teertha Swamiji Punya Tithi, Sri Kashi Mutt, Basrur in the ‘Sri Vishnu Yaaga and Sahasra Kumbhabhisheka’ 6 days programme, under the holy guidance of his holiness Srimad Sudheendra Thirtha Swamiji in 1986.',
@@ -159,14 +159,14 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
       'And in many ‘Yaga, Pratista’ etc programmes in Basrur, Kundapura, Kota, Koteswara, Brahmawara, Udupi, Siddapura, Gangolli, Bhatkal, Udupi, Mangalore etc',
     ],
     id: 'acc2',
-    slug: 'vaidika-service',
+    slug: 'vaidik-service',
   },
   {
     title: 'Other Activities',
     description: [
       'Basrur Panduranga Acharya served and played his role in many forms. Some of them are:',
       'Has published substantial number of articles in Kannada news papers over the years.',
-      'Has published numerous articles in magazines such as Jeevotham, Panchakadayi, Sawaswathi Prabha etc',
+      'Has published numerous articles and news in magazines such as Jeevottam, Panchkadayi, Panavar etc',
       'Has published large number articles in Souvenir Books covering educational institutions, temples and Mutts etc.',
       'As a part-time teacher in Sanskrit at Shri Bhuvanendra Balakashram, Basrur for 32 years, from 1968-1999.',
       'An external examiner at Srinivasa Nigamagama Paatashaala, Mangaluru for 12 years.',
@@ -182,6 +182,7 @@ export const ACCOMPLISHMENTS: Accomplishment[] = [
     title: 'Honors',
     description: [
       'Basrur Panduranga Acharya has been honoured by various institutions over the years. Some of them were by:',
+      'High School Head Masters Association, Kundapura Taluk',
       'Akhila Karnataka Sanskrit Parishat Kundapur-Basrur',
       'GSB Saibarkatte Zone, Udupi District – Purohith’s Sanman',
       '‘Dattinidhi of Vedamurthy Krishnananda Acharya Gangolli’ in the holy presence of Srimad Vidyadhiraja Theertha Swamiji in 2011.',
@@ -204,8 +205,8 @@ export const MENU_LINKS: MenuLink[] = [
     id: 'acc1',
   },
   {
-    name: 'Vaidika Service',
-    href: '/accomplishments/vaidika-service',
+    name: 'Vaidik Service',
+    href: '/accomplishments/vaidik-service',
     id: 'acc2',
   },
   {
